@@ -1,0 +1,301 @@
+/* ------------------------------
+   Basic Reset
+------------------------------ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ------------------------------
+   Page
+------------------------------ */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #eef2f6;
+
+    min-height: 100vh;
+
+    color: #1f2933;
+}
+
+
+/* ------------------------------
+   Main Container
+------------------------------ */
+
+.page-container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+
+/* ------------------------------
+   Predictor Card
+------------------------------ */
+
+.predictor-card {
+    width: 520px;
+    max-width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #d9e1e8;
+
+    border-radius: 14px;
+
+    padding: 32px;
+
+    box-shadow: 0 8px 25px rgba(31, 41, 51, 0.10);
+}
+
+
+/* ------------------------------
+   Header
+------------------------------ */
+
+.header-section {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding-bottom: 25px;
+
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+.car-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf2f8;
+
+    border-radius: 10px;
+
+    font-size: 27px;
+}
+
+
+.header-section h1 {
+    font-size: 27px;
+
+    color: #123b63;
+
+    margin-bottom: 5px;
+}
+
+
+.header-section p {
+    font-size: 14px;
+
+    color: #667085;
+}
+
+
+/* ------------------------------
+   Form
+------------------------------ */
+
+.prediction-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+/* ------------------------------
+   Input Groups
+------------------------------ */
+
+.input-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.input-group label {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #344054;
+}
+
+
+/* ------------------------------
+   Select + Input
+------------------------------ */
+
+.input-group select,
+.input-group input {
+    width: 100%;
+
+    height: 44px;
+
+    padding: 0 12px;
+
+    border: 1px solid #cbd5df;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #1f2933;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: border-color 0.2s;
+}
+
+
+/* Focus */
+
+.input-group select:focus,
+.input-group input:focus {
+    border-color: #2f5d8a;
+
+    box-shadow: 0 0 0 3px rgba(47, 93, 138, 0.10);
+}
+
+
+/* Small description */
+
+.input-group small {
+    font-size: 12px;
+
+    color: #667085;
+}
+
+
+/* ------------------------------
+   Predict Button
+------------------------------ */
+
+.predict-button {
+    width: 100%;
+
+    height: 46px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #2f5d8a;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background 0.2s;
+}
+
+
+.predict-button:hover {
+    background: #123b63;
+}
+
+
+/* ------------------------------
+   Result Box
+------------------------------ */
+
+.result-box {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    background: #f0f7f2;
+
+    border: 1px solid #b9d8c0;
+
+    border-radius: 9px;
+
+    text-align: center;
+}
+
+
+.result-label {
+    font-size: 13px;
+
+    color: #52705a;
+
+    margin-bottom: 7px;
+
+    font-weight: 600;
+}
+
+
+.result-value {
+    font-size: 23px;
+
+    font-weight: 700;
+
+    color: #216e39;
+}
+
+
+/* ------------------------------
+   Footer
+------------------------------ */
+
+.footer-text {
+    text-align: center;
+
+    margin-top: 22px;
+
+    font-size: 12px;
+
+    color: #98a2b3;
+}
+
+
+/* ------------------------------
+   Mobile
+------------------------------ */
+
+@media (max-width: 600px) {
+
+    .page-container {
+        padding: 20px 12px;
+    }
+
+    .predictor-card {
+        padding: 24px 20px;
+    }
+
+    .header-section h1 {
+        font-size: 23px;
+    }
+
+}

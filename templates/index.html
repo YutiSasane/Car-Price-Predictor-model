@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Car Price Predictor</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <!-- Main Card -->
+        <div class="predictor-card">
+
+            <!-- Header -->
+            <div class="header-section">
+                <div class="car-icon">🚗</div>
+
+                <div>
+                    <h1>Car Price Predictor</h1>
+                    <p>Machine Learning Based Price Prediction</p>
+                </div>
+            </div>
+
+
+            <!-- Form -->
+            <form method="POST" class="prediction-form">
+
+                <!-- Company -->
+                <div class="input-group">
+
+                    <label for="company">
+                        Company
+                    </label>
+
+                    <select
+                        name="company"
+                        id="company">
+
+                        {% for company in companies %}
+
+                            <option
+                                value="{{ company }}"
+                                {% if company == selected_company %}
+                                    selected
+                                {% endif %}>
+
+                                {{ company }}
+
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <!-- Model -->
+                <div class="input-group">
+
+                    <label for="car_model">
+                        Car Model
+                    </label>
+
+                    <select
+                        name="car_model"
+                        id="car_model">
+
+                        {% for model in car_models %}
+
+                            <option
+                                value="{{ model }}"
+                                {% if model == selected_model %}
+                                    selected
+                                {% endif %}>
+
+                                {{ model }}
+
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <!-- Year -->
+                <div class="input-group">
+
+                    <label for="year">
+                        Manufacturing Year
+                    </label>
+
+                    <select
+                        name="year"
+                        id="year">
+
+                        {% for year in years %}
+
+                            <option
+                                value="{{ year }}"
+                                {% if year|string == selected_year %}
+                                    selected
+                                {% endif %}>
+
+                                {{ year }}
+
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <!-- Fuel Type -->
+                <div class="input-group">
+
+                    <label for="fuel_type">
+                        Fuel Type
+                    </label>
+
+                    <select
+                        name="fuel_type"
+                        id="fuel_type">
+
+                        {% for fuel in fuel_types %}
+
+                            <option
+                                value="{{ fuel }}"
+                                {% if fuel == selected_fuel %}
+                                    selected
+                                {% endif %}>
+
+                                {{ fuel }}
+
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <!-- Kilometers -->
+                <!-- Kilometers Driven -->
+<div class="input-group">
+
+    <label for="km_options">
+        Kilometers Driven
+    </label>
+
+    <!-- Common Kilometer Options -->
+    <select
+        name="km_options"
+        id="km_options">
+
+        <option value="">
+            Select a common value
+        </option>
+
+        <option value="5000">5,000 km</option>
+        <option value="10000">10,000 km</option>
+        <option value="20000">20,000 km</option>
+        <option value="30000">30,000 km</option>
+        <option value="40000">40,000 km</option>
+        <option value="50000">50,000 km</option>
+        <option value="60000">60,000 km</option>
+        <option value="75000">75,000 km</option>
+        <option value="100000">1,00,000 km</option>
+        <option value="125000">1,25,000 km</option>
+        <option value="150000">1,50,000 km</option>
+        <option value="200000">2,00,000 km</option>
+
+    </select>
+
+
+    <!-- Manual Input -->
+    <input
+        type="text"
+        name="kilo_driven"
+        id="kilo_driven"
+        value="{{ selected_km }}"
+        placeholder="Or enter kilometers manually"
+        autocomplete="off"
+    >
+
+    <small>
+        Select a common value or enter kilometers manually.
+    </small>
+
+</div>
+
+                <!-- Predict Button -->
+                <button
+                    type="submit"
+                    class="predict-button">
+
+                    Predict Price
+
+                </button>
+
+            </form>
+
+
+            <!-- Prediction Result -->
+            {% if prediction_text %}
+
+                <div class="result-box">
+
+                    <div class="result-label">
+                        Estimated Car Price
+                    </div>
+
+                    <div class="result-value">
+                        {{ prediction_text }}
+                    </div>
+
+                </div>
+
+            {% endif %}
+
+
+            <!-- Footer -->
+            <div class="footer-text">
+                Powered by Machine Learning
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
